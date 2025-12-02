@@ -1,6 +1,7 @@
 package com.example.sbstarter.service;
 
 import com.example.sbstarter.dto.FileEntity;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,6 +17,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class FileServiceTest {
     @Autowired
     private FileService fileService;
+
+    @BeforeEach
+    void setup() {
+        fileService = new FileService();
+    }
 
     @Test
     void saveAndGetFile() {
@@ -43,7 +49,6 @@ class FileServiceTest {
 
     @Test
     void cleanupRemovesOldFiles() throws Exception {
-        fileService = new FileService();
         fileService.saveFile("old.txt", "123".getBytes());
         fileService.saveFile("new.txt", "456".getBytes());
 
