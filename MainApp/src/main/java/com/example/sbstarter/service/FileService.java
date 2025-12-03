@@ -6,8 +6,10 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 @Service
 public class FileService {
@@ -33,4 +35,11 @@ public class FileService {
     public int countFiles() {
         return storage.size();
     }
+
+    public List<String> getAllFilenames() {
+        return storage.keySet().stream()
+                .sorted()
+                .collect(Collectors.toList());
+    }
+
 }

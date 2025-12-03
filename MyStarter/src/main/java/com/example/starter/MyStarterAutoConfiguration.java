@@ -12,9 +12,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDateTime;
 
+
 @Configuration
-//@ConditionalOnProperty(prefix = "my.starter", name = "enabled", havingValue = "true")
-//@ConditionalOnBean(DataSource.class)
+@ConditionalOnProperty(prefix = "my.starter", name = "enabled", havingValue = "true")
 @EnableConfigurationProperties(MyStarterProperties.class)
 public class MyStarterAutoConfiguration {
 

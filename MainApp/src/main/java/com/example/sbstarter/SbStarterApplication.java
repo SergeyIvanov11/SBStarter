@@ -24,7 +24,7 @@ public class SbStarterApplication {
     public static void main(String[] args) throws UnsupportedEncodingException, NoSuchFieldException, IllegalAccessException {
         System.setOut(new PrintStream(System.out, true, "UTF-8"));
         SpringApplication.run(SbStarterApplication.class, args);
-
+/*
         FileService service = new FileService();
         System.out.println("=== Тестируем FileService ===");
 
@@ -45,9 +45,9 @@ public class SbStarterApplication {
         System.out.println("Файлов до очистки - " + service.countFiles());
         service.cleanup();
         System.out.println("Файлов после очистки - " + service.countFiles());
-
+*/
     }
-
+/*
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
@@ -66,4 +66,5 @@ public class SbStarterApplication {
             System.out.println("Стартер бин: " + starter);
         };
     }
+    */
 }
